@@ -32,15 +32,15 @@ with st.form("input_form"):
         # Number input para Valor do Aluguel
         valor_aluguel = st.number_input("Valor do Aluguel (ao mês)", value=1000.0, min_value=0.0)
         # Number input para Taxa de Juros do Aluguel
-        taxa_juros_aluguel = st.number_input("Taxa de Juros do Aluguel (Anual)", value=0.03)
+        taxa_juros_aluguel = st.number_input("Taxa de Juros do Aluguel (Anual)", value=0.03,step=0.001,format="%.3f")
         # Number input para Taxa de Juros da Aplicação
-        taxa_juros_aplicacao = st.number_input("Taxa de Juros da Aplicação (Anual)", value=0.06)  
+        taxa_juros_aplicacao = st.number_input("Taxa de Juros da Aplicação (Anual)", value=0.06,step=0.001,format="%.3f")  
     
     with col2:
         # Number input para Valor do Imóvel
         valor_imovel = st.number_input("Valor do Imóvel", value=300000.0,min_value=0.0)
         # Number input para Valorização do Imóvel
-        valorizacao_imovel = st.number_input("Valorização do Imóvel (Anual)", value=0.05)
+        valorizacao_imovel = st.number_input("Valorização do Imóvel (Anual)", value=0.05,step=0.001,format="%.3f")
         # Number input para Horizonte de Anos
         horizonte_anos = st.number_input("Horizonte de Anos", value=20,min_value=1)
     
