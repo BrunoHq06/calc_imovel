@@ -56,6 +56,6 @@ if submit_button:
     else:
         resultado = 'Seguestão: Comprar o imóvel'
     
-    st.write(f'Valor Final do rendimento: {resultado_dicionario["valor_descontado"]}')
-    st.write(f'Valor Final do imóvel: {resultado_dicionario["valor_imóvel"]}')
+    st.write(f'Valor Final do rendimento: {resultado_dicionario["valor_descontado"]:,}')
+    st.write(f'Valor Final do imóvel: {resultado_dicionario["valor_imóvel"]:,}')
     st.write(resultado)
