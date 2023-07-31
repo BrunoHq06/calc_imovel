@@ -15,14 +15,6 @@ def calculadora_imovel_ou_aluguel(valor_aluguel, valor_imovel, valorizacao_imove
 
         # Atualiza o valor do imóvel para o próximo ano com a valorização
         montante_comprado *= (1 + valorizacao_imovel)
-        
-        # #Debug dos calculos, posteriormente pode ser ignorado
-
-        # print(f'No ano {ano}, meu novo montante é de: {round(montante_investimento,2)}')
-        # print(f'No ano {ano}, meu imóvel agora vale: {round(montante_comprado,2)}')
-        # print(f'No ano {ano}, meu gasto com aluguel é de: {round(aluguel_acumulado,2)}')
-        # print((f'No ano {ano}, meu montante menos o aluguel é de: {round(montante_investimento - aluguel_acumulado,2)}'))
-        # print(f'################################################')
 
     dicionario_retorno = {'valor_imóvel':round(montante_comprado,2),
                         'valor_rendimento':round(montante_investimento,2),
@@ -38,7 +30,7 @@ with st.form("input_form"):
     
     with col1:
         # Number input para Valor do Aluguel
-        valor_aluguel = st.number_input("Valor do Aluguel (ao mês)", value=1000.0)
+        valor_aluguel = st.number_input("Valor do Aluguel (ao mês)", value=1000.0, min_value=0.0)
         # Number input para Taxa de Juros do Aluguel
         taxa_juros_aluguel = st.number_input("Taxa de Juros do Aluguel (Anual)", value=0.03)
         # Number input para Taxa de Juros da Aplicação
@@ -46,11 +38,11 @@ with st.form("input_form"):
     
     with col2:
         # Number input para Valor do Imóvel
-        valor_imovel = st.number_input("Valor do Imóvel", value=300000.0)
+        valor_imovel = st.number_input("Valor do Imóvel", value=300000.0,min_value=0.0)
         # Number input para Valorização do Imóvel
         valorizacao_imovel = st.number_input("Valorização do Imóvel (Anual)", value=0.05)
         # Number input para Horizonte de Anos
-        horizonte_anos = st.number_input("Horizonte de Anos", value=20)
+        horizonte_anos = st.number_input("Horizonte de Anos", value=20,min_value=1)
     
     # Botão para enviar os dados e obter a resposta
     submit_button = st.form_submit_button(label='Calcular')
